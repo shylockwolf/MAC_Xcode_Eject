@@ -23,6 +23,20 @@ struct ContentView: View {
                 Text("外置存储设备自动弹出")
                     .font(.title2)
                     .fontWeight(.bold)
+                
+                Spacer()
+                
+                VStack(alignment: .trailing, spacing: 2) {
+                    Text("Shylock Wolf")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Text("v1.1")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Text("2025/11/16")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
             .padding(.top)
             
