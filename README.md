@@ -1,6 +1,6 @@
 # Eject - 外置存储设备自动弹出工具
 
-[![Platform](https://img.shields.io/badge/platform-macOS-blue.svg)](https://github.com/shylockwolf/MAC_Xcode_Eject) [![Version](https://img.shields.io/badge/version-1.3.0-green.svg)]() [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS-blue.svg)](https://github.com/shylockwolf/MAC_Xcode_Eject) [![Version](https://img.shields.io/badge/version-1.5.0-green.svg)]() [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 一个专为macOS设计的简洁工具，用于自动检测并安全弹出所有外置存储设备。
 
@@ -38,6 +38,11 @@ Eject/
 ```
 
 ## 版本历史
+
+### v1.5.0 (2026-02-11)
+- 界面布局优化：对齐所有窗口的宽度
+- 版本号更新至1.5.0
+- 时间信息更新
 
 ### v1.3.0 (2024-11-16)
 - 代码仓库优化，仅保留当前稳定版本

@@ -30,10 +30,10 @@ struct ContentView: View {
                     Text("Shylock Wolf")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("v1.1")
+                    Text("v1.5.0")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("2025/11/16")
+                    Text("2026/02")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
@@ -43,7 +43,7 @@ struct ContentView: View {
             // 统一显示区：加载状态、设备列表和操作日志（带实时滚屏功能）
             ScrollViewReader { proxy in
                 ScrollView {
-                    VStack(spacing: 16) {
+                    VStack(alignment: .leading, spacing: 16) {
                         // 加载状态
                         if isLoading {
                             ProgressView("正在处理设备...")
@@ -64,24 +64,26 @@ struct ContentView: View {
                                         .font(.system(.headline, design: .rounded))
                                         .fontWeight(.semibold)
                                         .foregroundColor(.gray)
+                                    Spacer()
                                 }
                                 
-                                VStack(alignment: .leading, spacing: 4) {
-                                    ForEach(externalVolumes, id: \.self) {
-                                        Text($0)
-                                            .font(.system(.body, design: .monospaced))
-                                            .foregroundColor(.primary)
-                                            .padding(.horizontal, 8)
-                                            .padding(.vertical, 4)
-                                    }
+                                ForEach(externalVolumes, id: \.self) {
+                                    Text($0)
+                                        .font(.system(.body, design: .monospaced))
+                                        .foregroundColor(.primary)
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 4)
                                 }
-                                .background(Color.white)
-                                .cornerRadius(6)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 6)
-                                        .stroke(Color.gray.opacity(0.3), lineWidth: 1)
-                                )
                             }
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 8)
+                            .background(Color.white)
+                            .cornerRadius(6)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 6)
+                                    .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                            )
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         
                         // 已弹出的外置设备列表
@@ -95,29 +97,31 @@ struct ContentView: View {
                                         .font(.system(.headline, design: .rounded))
                                         .fontWeight(.semibold)
                                         .foregroundColor(.orange)
+                                    Spacer()
                                 }
                                 
-                                VStack(alignment: .leading, spacing: 4) {
-                                    ForEach(externalVolumes, id: \.self) { volume in
-                                        HStack(spacing: 8) {
-                                            Image(systemName: "externaldrive.fill")
-                                                .foregroundColor(.orange)
-                                                .font(.system(size: 14))
-                                            Text(volume)
-                                                .font(.system(.body, design: .monospaced))
-                                                .foregroundColor(.primary)
-                                        }
-                                        .padding(.horizontal, 8)
-                                        .padding(.vertical, 4)
+                                ForEach(externalVolumes, id: \.self) { volume in
+                                    HStack(spacing: 8) {
+                                        Image(systemName: "externaldrive.fill")
+                                            .foregroundColor(.orange)
+                                            .font(.system(size: 14))
+                                        Text(volume)
+                                            .font(.system(.body, design: .monospaced))
+                                            .foregroundColor(.primary)
                                     }
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
                                 }
-                                .background(Color.orange.opacity(0.05))
-                                .cornerRadius(6)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 6)
-                                        .stroke(Color.orange.opacity(0.3), lineWidth: 1)
-                                )
                             }
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 8)
+                            .background(Color.orange.opacity(0.05))
+                            .cornerRadius(6)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 6)
+                                    .stroke(Color.orange.opacity(0.3), lineWidth: 1)
+                            )
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         
                         // 操作日志
@@ -130,20 +134,24 @@ struct ContentView: View {
                                     .font(.system(.headline, design: .rounded))
                                     .fontWeight(.semibold)
                                     .foregroundColor(.blue)
+                                Spacer()
                             }
                             
                             Text(ejectMessage)
                                 .font(.system(.body, design: .monospaced))
                                 .foregroundColor(.primary)
                                 .textSelection(.enabled)
-                                .padding(10)
-                                .background(Color.blue.opacity(0.05))
-                                .cornerRadius(6)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 6)
-                                        .stroke(Color.blue.opacity(0.3), lineWidth: 1)
-                                )
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 10)
+                        .background(Color.blue.opacity(0.05))
+                        .cornerRadius(6)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(Color.blue.opacity(0.3), lineWidth: 1)
+                        )
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         
                         // 用于自动滚动的锚点
                         Text("")
