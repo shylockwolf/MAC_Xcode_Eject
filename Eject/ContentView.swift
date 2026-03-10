@@ -24,16 +24,27 @@ struct ContentView: View {
                     .font(.title2)
                     .fontWeight(.bold)
                 
+                Button(action: {
+                    autoEjectProcess()
+                }) {
+                    Image(systemName: "arrow.clockwise")
+                        .font(.title3)
+                        .foregroundColor(.blue)
+                        .padding(.leading, 8)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .help("重新扫描并弹出设备")
+                
                 Spacer()
                 
                 VStack(alignment: .trailing, spacing: 2) {
                     Text("Shylock Wolf")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("v1.5.0")
+                    Text("v1.6.0")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("2026/02")
+                    Text("2026/03")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
